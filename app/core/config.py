@@ -16,4 +16,6 @@ class Settings(BaseSettings):
     # Project
     API_V1_STR: str = '/api/v1'
 
+    SECRET_KEY: str
+
     model_config = SettingsConfigDict(env_file=ENV_PATH)
