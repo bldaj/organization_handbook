@@ -8,9 +8,15 @@ from typing import (
 from fastapi import (
     Depends,
 )
+from sqlalchemy.ext.asyncio.session import (
+    AsyncSession,
+)
 
 from app.core.config import (
     Settings,
+)
+from app.db.session import (
+    get_session,
 )
 
 
@@ -23,3 +29,5 @@ settings = get_settings()
 
 
 SettingsDep = Annotated[Settings, Depends(get_settings)]
+
+SessionDep = Annotated[AsyncSession, Depends(get_session)]
